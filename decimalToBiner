@@ -1,0 +1,27 @@
+Program main;	
+var
+	bilangan:integer;
+	nilaiBiner:string;
+	
+function decimal2biner(dec:integer):string;
+var
+	s:string='';
+	temp:integer;
+begin
+	while (dec <> 0) do
+	begin
+		temp:=dec mod 2;
+		if (temp = 1) then
+			s:='1'+s
+		else s:='0'+s;
+		dec:=dec div 2;		
+	end;
+	decimal2biner:=s;
+end;
+Begin
+	write('masukkan bilangan: ');
+	readln(bilangan);
+	nilaiBiner:=decimal2biner(bilangan);
+	writeln('nilai biner dari ',bilangan,' adalah ',nilaiBiner);
+	readln;
+End.
